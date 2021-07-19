@@ -1,0 +1,25 @@
+{
+  "general": {
+    "port": 3000
+  },
+  "mail": { 
+    "general" : {
+       "from": "System User",
+       "replyTo": "rowan.pronk@icloud.com",
+       "subject": "Mail from sampleMailer"
+    },
+    "providers": {
+       "sendgrid" : {
+            "endPoint": "https://api.sendgrid.com/v3/mail/send",
+            "key": ""
+        },
+        "mailgun" : {
+            "endPoint": "https://api.mailgun.net/v3/[DOMAIN]/messages",
+            "key": ""
+      }
+    }
+ },
+ "tests": {
+      "apiEndpoint": "http://localhost:3000"
+   }
+}
