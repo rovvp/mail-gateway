@@ -31,24 +31,31 @@ module.exports = {
         }
         
         return options = {
-            method: 'POST',
-            url: config.mail.providers.sendgrid.endPoint,
-            headers: {
-                'content-type': 'application/json',
-                authorization: 'Bearer ' + config.mail.providers.sendgrid.key
-            },
-            body: {
-                personalizations: personalizations,
-                from: {
-                    email: config.mail.general.replyTo,
-                    name: config.mail.general.from
-                },
-                reply_to: {
-                    email: config.mail.general.replyTo,
-                    name: config.mail.general.from
-               }
-           }
-        }
+          method: 'POST',
+          url: config.mail.providers['sendgrid'].endPoint,
+          headers: {
+              'content-type': 'application/json',
+              authorization: 'Bearer ' + config.mail.providers.sendgrid.key
+          },
+          body: {
+              personalizations: personalizations,
+              from: {
+                  email: config.mail.general.replyTo,
+                  name: config.mail.general.from
+              },
+              reply_to: {
+                  email: config.mail.general.replyTo,
+                  name: config.mail.general.from
+              },
+          content: [
+              {
+                "type": "text/plain",
+                "value": credentials.content
+              }
+            ]
+          },
+          json: true
+      };
 
     }
 
