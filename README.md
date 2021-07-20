@@ -161,7 +161,7 @@ Request Payload:
 Constraints: 
 
 * addressTo: is required and can contain one or multiple addresses. Seperate multiple addresses by semicolon. 
-* addresCc / addressBcc: optional and can contain one or multiple addresses. Seperate multiple addresses by semicolon. 
+* addressCc / addressBcc: optional and can contain one or multiple addresses. Seperate multiple addresses by semicolon. 
 * content: is required and must be more than 3 characters.
 
 ```
